@@ -1,0 +1,175 @@
+:root {
+    --primary-color: #000000;
+    --background-color: #ffffff;
+    --accent-gradient: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%);
+    /* Fallback */
+    --brand-gradient: linear-gradient(135deg, #fe5f55, #e63946, #c77dff);
+    --text-color: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 70vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Carousel Section */
+.carousel-container {
+    padding: 10px 0;
+    background: transparent;
+    /* Clean white look */
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    height: 120px;
+    /* Slightly smaller to emphasize hero */
+    border-radius: 5px;
+    /* Sharper corners */
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    opacity: 0.6;
+    object-fit: contain;
+    filter: grayscale(100%);
+    /* B&W until active/hover for contrast */
+}
+
+.carousel-item:hover,
+.carousel-item.active {
+    transform: scale(1.05);
+    opacity: 1;
+    filter: grayscale(0%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Downloads/Horarios Section */
+.downloads {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.downloads h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-weight: 900;
+    /* Extra bold like the poster headers */
+    letter-spacing: -1px;
+    /* Tight tracking */
+    text-transform: lowercase;
+    /* Stylistic choice based on 'zénit' */
+}
+
+.downloads h2::first-letter {
+    text-transform: uppercase;
+}
+
+.pdf-links {
+    display: flex;
+    flex-direction: column;
+    /* List view vs Grid for cleaner look? Keeping flex wrap but better spacing */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 0px;
+    /* Geometric/Brutalist feel */
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    /* Smooth snap */
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Gradient hover effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 99%, #feada6 100%);
+    /* Soft gradient */
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    /* Vivid gradient match */
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+.btn:hover {
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(221, 36, 118, 0.3);
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .carousel-item {
+        height: 80px;
+    }
+
+    .downloads h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
