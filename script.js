@@ -1,8 +1,8 @@
 const images = [
-    'assets/CARTELES EXTRAORDINARIOS-04.jpg',
-    'assets/CARTELES EXTRAORDINARIOS-07.jpg',
-    'assets/CARTELES EXTRAORDINARIOS-08.jpg',
-    'assets/CARTELES EXTRAORDINARIOS-09.jpg'
+    'assets/CARTELES_EXTRAORDINARIOS-04_v2.jpg',
+    'assets/CARTELES_EXTRAORDINARIOS-07_v2.jpg',
+    'assets/CARTELES_EXTRAORDINARIOS-08_v2.jpg',
+    'assets/CARTELES_EXTRAORDINARIOS-09_v2.jpg'
 ];
 
 const hero = document.getElementById('hero-image');
